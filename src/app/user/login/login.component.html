@@ -1,0 +1,52 @@
+<h2>Login</h2>
+<br /><br />
+<div>
+  <div class="container">
+    <form>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <label>Username</label>
+          <input type="text" class="form-control" name="userName" [(ngModel)]="userName" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="password" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <button type="button" class="btn btn-success" (click)="validateLogin()">Login</button>
+          <input type="reset" class="btn btn-warning" value="Cancel" />
+        </div>
+      </div>
+      
+      
+    </form>
+  </div>
+  <br /><br />
+  <form>
+    Username
+    <select [(ngModel)]="userType" name="usrty" id="usrty">
+      <option value="eu">Existing User</option>
+      <option value="nu">New User</option></select
+    ><br />
+    <div *ngIf="userType == 'eu'">
+      Password
+      <input type="password" name="password" [(ngModel)]="password" /><br />
+      <button class="btn btn-success" type="button" (click)="validateLogin()">
+        Login
+      </button>
+      <input type="reset" value="Cancel" />
+    </div>
+    <div *ngIf="userType == 'nu'">
+      <h2>Register Here....</h2>
+    </div>
+
+    {{ userType }}
+  </form>
+</div>

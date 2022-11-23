@@ -1,0 +1,38 @@
+
+<br><br>
+<div>
+    Name : Ajay <br>
+    Age : 25 <br>
+    City : Chennai
+</div>
+<div>
+    {{userNames}}
+
+    <table>
+        <tr *ngFor="let user of userNames">
+            <td>{{user}}</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+
+    </table>
+    <select name="usrNms">
+        <option *ngFor="let user of userNames">{{user}}</option>
+    </select>
+
+    <br>
+    Country :
+    <select [(ngModel)] ="selectedCtry" (change)="loadStates()">
+        <option *ngFor="let cntry of countries"> {{cntry}}</option>
+    </select><br>
+    State : <select [(ngModel)] = "selectedSt" (change)="loadCities()">
+        <option>--Select--</option>
+        <option *ngFor = "let st of states"> {{ st}}</option>
+    </select>
+    City : <select [(ngModel)] = "selectedCity">
+        <option>--Select--</option>
+        <option *ngFor = "let city of cities"> {{ city }} </option>
+    </select>
+    Price : {{ price}}
+</div>
+<h3 (click)="logout()">Logout</h3>
