@@ -30,13 +30,13 @@
   </div>
   <br /><br />
   <form>
-    Username
+    Username :
     <select [(ngModel)]="userType" name="usrty" id="usrty">
       <option value="eu">Existing User</option>
       <option value="nu">New User</option></select
     ><br />
     <div *ngIf="userType == 'eu'">
-      Password
+      Password :
       <input type="password" name="password" [(ngModel)]="password" /><br />
       <button class="btn btn-success" type="button" (click)="validateLogin()">
         Login
